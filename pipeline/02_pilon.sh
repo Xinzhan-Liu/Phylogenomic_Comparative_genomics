@@ -3,28 +3,29 @@
 
 module load AAFTF
 MEM=96
-SAMPLES=nanopore_samples.csv
-INDIR=asm/medaka
-OUTDIR=asm/pilon
-READDIR=input/illumina
+SAMPLES=nanopore_samples.csv     #定义样本文件
+INDIR=asm/medaka                 #输入文件的路径，本脚本是利用pilon软件对canu组装后并且经过medaka软件自我修正后的文件作为目标文件
+OUTDIR=asm/pilon                 #输出文件的路径
+READDIR=input/illumina           #读取文件的路径，本脚本是利用illumina数据对canu组装后并且经过medaka软件自我修正后的文件进行polish
 
-N=${SLURM_ARRAY_TASK_ID}         # 得到array的索引值：1-12
-if [ -z $N ]; then               # 依次判断1-12参数中是否有空值, 若有空值， 则
+N=${SLURM_ARRAY_TASK_ID}         #array值设置为：1-12；这个值的设置是根据sample.csv文件中的样品数(除去第一行的行数)，有多少个样品需要polish就有多少个job，也就设置多少个array
+if [ -z $N ]; then               #依次判断1-12参数中是否有空值, 若有空值，则
     N=$1                         
-    if [ -z $N ]; then            # 依次判断1-12参数中是否有空值, 若有空值，则
+    if [ -z $N ]; then           #依次判断1-12参数中是否有空值, 若有空值，则
 	echo "no value for SLURM ARRAY - specify with -a or cmdline"    #若array中有空值，则输出这个
     fi
 fi
 
-CPU=$SLURM_CPUS_ON_NODE          # 每个节点上的CPU数量赋值给CPU
-if [ -z $CPU ]; then             # 如果CPU的值为空，给节点分配一个CPU
+CPU=$SLURM_CPUS_ON_NODE          #每个节点上的CPU数量赋值给CPU
+if [ -z $CPU ]; then             #如果CPU的值为空，给节点分配一个CPU
 	CPU=1
 fi
 
 mkdir -p $OUTDIR
 
 IFS=,
-tail -n +2 $SAMPLES | sed -n ${N}p | while read BASE SPECIES STRAIN NANOPORE ILLUMINA SUBPHYLUM PHYLUM LOCUS RNASEQ   #显示样本里末尾n行的内容，只显示第N行内容，读取文件
+tail -n +2 $SAMPLES | sed -n ${N}p | while read BASE SPECIES STRAIN NANOPORE ILLUMINA SUBPHYLUM PHYLUM LOCUS RNASEQ   
+#脚本‘tail -n +2’的意思为从sample.csv文件的第二行还是输出，因为第一行是表头；‘sed -n ${N}p’只显示第N行内容，读取文件
 do
     for type in canu flye                                                 #将 canu flye的值依次赋值给 type
     do
