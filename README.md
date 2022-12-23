@@ -1,2 +1,5 @@
 # Phylogenomic_Comparative_genomics
 此文件夹所有脚本都用来进行comparative genomics分析中使用
+第一步：Assembly，使用canu软件对nanopore数据进行组装
+第二步：三代数据Polish: 使用medaka软件对组装完的基因组进行三代数据的polish
+第三步：二代数据Polish: 使用pilon软件和illumina数据对组装完的基因组进行二代数据的polish
