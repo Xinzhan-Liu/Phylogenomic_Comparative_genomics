@@ -35,7 +35,7 @@ do
     	rsync -av $INDIR/flye/$BASE/assembly.fasta $OUTDIR/$BASE/flye.fasta
     fi
 
-    READS=$READDIR/$NANOPORE
+    READS=$READDIR/$NANOPORE                         #READDIR=input/nanopore; 
     for type in canu flye
     do
 	DRAFT=$OUTDIR/$BASE/$type.fasta
