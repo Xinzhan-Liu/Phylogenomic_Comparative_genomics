@@ -1,5 +1,5 @@
 # Phylogenomic_Comparative_genomics
-此文件夹所有脚本都用来进行comparative genomics分析中使用
+此文件夹所有脚本都来自于Jason's lab, 用来进行comparative genomics分析中使用；
 
 第一步：Assembly，使用canu软件对nanopore数据进行组装
 
