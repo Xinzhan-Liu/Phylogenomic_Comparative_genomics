@@ -4,7 +4,7 @@
 module load medaka/1.6
 module load workspace/scratch
  
-READDIR=input/nanopore
+READDIR=input/nanopore                      #此文件夹为nanopore测序原始数据
 INDIR=asm
 OUTDIR=asm/medaka
 CPU=$SLURM_CPUS_ON_NODE
