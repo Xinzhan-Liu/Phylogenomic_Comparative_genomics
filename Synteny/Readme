@@ -1,1 +1,3 @@
 gggenomes是共线性分析并作图的R脚本
+示例文件：
+1. emale_ava：使用minimap2进行all-versus-all序列比对
