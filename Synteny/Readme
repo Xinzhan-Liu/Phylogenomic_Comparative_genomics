@@ -6,3 +6,4 @@ gggenomes是共线性分析并作图的R脚本
 4. emale_genes：Gene annotations of 6 EMALE genomes (endogenous virophages)。由GFF文件而来！
 5. emale_ngaros: Integrated Ngaro retrotransposons of 6 EMALE genomes
 6. emale_prot_ava: All-versus-all alignments 6 EMALE proteomes，使用blast输出结果https://github.com/seqan/lambda/wiki/BLAST-Output-Formats
+7. emale_prot_uniref50：Alignments of 6 EMALE proteomes against Uniref50；One row per alignment. Alignments were computed with mmseqs2 (blast-like), and filtered by evalue (<1e-20).
