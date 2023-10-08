@@ -16,6 +16,7 @@ Step1:
 Step2: convert the gbk file to bed file using the perl script "2_convert_gbk_to_bed.pl"
 # https://github.com/maxmicrobe/POP-seq/blob/main/gbk2bed.pl
 
+module load bioperl
 perl convert_gbk_to_bed.pl input.gbk > output.bed
 
 In this command:
