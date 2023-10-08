@@ -9,3 +9,8 @@ gggenomes是共线性分析并作图的R脚本
 7. emale_prot_uniref50：Alignments of 6 EMALE proteomes against Uniref50；One row per alignment. 使用 mmseqs2 (blast-like)进行序列比对, and filtered by evalue (<1e-20).
 8. emale_seqs: Sequence index of 6 EMALE genomes (endogenous virophages)，A data set containing the sequence information on 6 endogenous virophages found in the genomes of the marine protist Cafeteria burkhardae.
 9. emale_tirs:Terminal inverted repeats of 6 EMALE genomes,由GFF文件而来！
+
+How to do the synteny analysis?
+Step1: 
+
+Step2: convert the gbk file to bed file using the perl script
