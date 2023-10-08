@@ -13,4 +13,13 @@ gggenomes是共线性分析并作图的R脚本
 How to do the synteny analysis?
 Step1: 
 
-Step2: convert the gbk file to bed file using the perl script
+Step2: convert the gbk file to bed file using the perl script "2_convert_gbk_to_bed.pl"
+# https://github.com/maxmicrobe/POP-seq/blob/main/gbk2bed.pl
+
+perl convert_gbk_to_bed.pl input.gbk > output.bed
+
+In this command:
+perl convert_gbk_to_bed.pl is the command to run your Perl script.
+input.gbk should be replaced with the path to your input GenBank file.
+output.bed is the name you want to give to the BED file that will be created. You can choose any name you like for the output file, just make sure it has the ".bed" file extension.
+When you run the script with this command, the script's output (which is the BED-formatted data) will be saved in the output.bed file in the same directory where you execute the command. You can then access and use the generated BED file as needed.
