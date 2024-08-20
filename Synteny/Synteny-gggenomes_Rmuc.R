@@ -6,9 +6,9 @@
 
 #step1：Read in the genomes
 > Rmuc_seqs <- tibble::tibble(bin_id = c("R_mucilaginosa_NRRL_Y-2510","R_mucilaginosa_JGTA-S1","R_mucilaginosa_JGTA-S1","R_mucilaginosa_JY1105","R_mucilaginosa_JY1105"),seq_id = c("scaffold_12","PEFX01000011","PEFX01000014","JANBVD010000011","JANBVD010000016"),length = c ("150774","105489","44364","91059","79242"))
->Rmuc_seqs
+> Rmuc_seqs
 
-#确保 length列是数值型，这步很关键，没有这一步报错。
+#Ensure that the “length” is numeric
 > Rmuc_seqs <- Rmuc_seqs %>% mutate(length = as.numeric(length))
 > p <- gggenomes(seqs = Rmuc_seqs)
 > p + geom_seq() + geom_seq_label()
