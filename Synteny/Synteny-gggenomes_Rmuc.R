@@ -1,6 +1,6 @@
-> setwd("/rhome/xinzhanl/R/synteny/2_synteny_subregions/")
+> setwd("/rhome/xinzhanl/R/synteny/5_synteny_subregions_add_RHA")
 > getwd()
-[1] "/rhome/xinzhanl/R/synteny/2_synteny_subregions"
+[1] "/rhome/xinzhanl/R/synteny/5_synteny_subregions_add_RHA"
 
 > library(gggenomes)
 
