@@ -13,3 +13,7 @@
 
 > p1 <- ggtree(rooted_tree) %<+% character + geom_tiplab(size=3)+geom_tippoint(aes(color=Sex))
 > p1
+
+> genome_size <- read_table("genome_size.txt")
+> p2 <- p1 + geom_facet(panel = "Genome_size", data=genome_size,geom = geom_col,aes(x=size),orientation='y',width=.6)
+> p2
