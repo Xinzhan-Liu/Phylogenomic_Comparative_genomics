@@ -7,7 +7,9 @@
 > tree <- read.tree("iqtree.treefile")
 > rooted_tree <- root(tree, outgroup = c("Sporobolomyces_roseus_SR19","Sporidiobolus_pararoseus_NGR"), resolve.root = TRUE)
 > character <- read_table("assembly_and_annotation_statistics.txt")
+
 > p <- ggtree(rooted_tree) %<+% character + geom_tiplab(size=3)
 > p
+
 > p1 <- ggtree(rooted_tree) %<+% character + geom_tiplab(size=3)+geom_tippoint(aes(color=Sex))
 > p1
