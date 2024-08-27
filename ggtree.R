@@ -11,7 +11,7 @@
 > p <- ggtree(rooted_tree) %<+% character + geom_tiplab(size=3)
 > p
 
-> p1 <- ggtree(rooted_tree) %<+% character + geom_tiplab(size=3)+geom_tippoint(aes(color=Sex))
+> p1 <- ggtree(rooted_tree) %<+% character + geom_tiplab(size=6)+geom_tippoint(aes(color=Sex,size=10))
 > p1
 
 > genome_size <- read_table("genome_size.txt")
